@@ -4,6 +4,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "sonner";
 import FloatingShapes from "@/components/floating-shape";
+import Header from "@/components/header";
+import { ConvexClientProvider } from "./convexClientProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,17 +25,19 @@ export default function RootLayout({
         className={`${inter.className}`}
       >
         <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
         >
-          
-          <main className="bg-slate-900 min-h-[2000px] text-white overflow-x-hidden">
-            <FloatingShapes />
-            <Toaster richColors />
-            {children}
-          </main>
+          <ConvexClientProvider>
+            <Header />
+            <main className="bg-slate-900 min-h-[2000px] text-white overflow-x-hidden">
+              <FloatingShapes />
+              <Toaster richColors />
+              {children}
+            </main>
+          </ConvexClientProvider>
         </ThemeProvider>
       </body>
     </html>
