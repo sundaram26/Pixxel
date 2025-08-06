@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Pixxel",
-  description: "AI Image Editor",
+  description: "AI Image Editor"
 };
 
 export default function RootLayout({
