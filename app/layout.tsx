@@ -7,7 +7,7 @@ import FloatingShapes from "@/components/floating-shape";
 import Header from "@/components/header";
 import { ConvexClientProvider } from "./convexClientProvider";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Pixxel",
