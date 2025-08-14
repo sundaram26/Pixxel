@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react'
+import { Button } from './ui/button';
 
 function Header() {
 
@@ -46,18 +47,29 @@ function Header() {
                     </div>
                 }
 
-                <div className='flex items-center gap-3 ml-10 md:ml-20'>auth</div>
-
                 <SignedOut>
-                    <SignInButton />
+                    <SignInButton>
+                        <Button variant="glass" className='hidden sm:flex'>
+                            Sign In
+                        </Button>
+                    </SignInButton>
                     <SignUpButton>
-                        <button className="bg-[#6c47ff] text-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer">
+                        {/* <button className="bg-[#6c47ff] text-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer">
                             Sign Up
-                        </button>
+                        </button> */}
+                        <Button variant="primary">
+                            Get Started
+                        </Button>
                     </SignUpButton>
                 </SignedOut>
                 <SignedIn>
-                    <UserButton />
+                    <UserButton
+                        appearance={{
+                            elements: {
+                                avatarBox: "w-8 h-8"
+                            }
+                        }}
+                    />
                 </SignedIn>
             </div>
         </header>
